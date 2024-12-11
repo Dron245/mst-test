@@ -1,0 +1,37 @@
+// Заголовки, общие БЄМ блоки и прочее...
+.button {
+	display: grid;
+	place-items: center;
+	padding: 32px 52px;
+	color: #000;
+	background-color: #fff;
+	border-radius: 4px;
+	line-height: 150%;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	text-align: center;
+	color: #222;
+	transition: color 0.3s, background-color 0.3s;
+
+	&:hover {
+		color: #fff;
+		background-color: #000;
+	}
+
+	&:active {
+		transform: translateY(2px);
+	}
+
+	&_invert {
+		color: #fff;
+		background-color: #000;
+
+		&:hover {
+			color: #000;
+			background-color: #fff;
+		}
+		&:active {
+			background-color: #fff;
+		}
+	}
+}
