@@ -1,27 +1,42 @@
 .header {
 	// @include gridContainer(3)
-	max-width: 61.458333%; /* 1180/1920 */
+	@media (min-width:$tablet){
+		  
+		max-width: 61.458333%; /* 1180/1920 */
+	}
 }
 
 .header {
+	outline: 1px solid red;
+	width: 100%;
 	position: fixed;
 	line-height: 150%;
 	text-transform: uppercase;
 	padding-block: 50px;
-
+	background-color: #222;
+	@media (min-width:$tablet){
+		  
+		@include adaptiveValue("margin-left", 185, 30,0,1920,992);
+	}
 	&__container {
 		display: flex;
 		align-items: center;
+		@media (max-width:$mobile){
+			 flex-direction: column; 
+		}
 	}
 
 	&__logo {
 		font-size: 36px;
 		letter-spacing: 0.03em;
-
+		font-family: prata;
+		@media (max-width:$mobile){
+			 margin-bottom: 20px; 
+		}
 	}
 
 	&__menu {
-		@include adaptiveValue("margin-left", 200, 100,0,1920,992);
+		@include adaptiveValue("margin-left", 200, 30,0,1920,992);
 	}
 }
 
