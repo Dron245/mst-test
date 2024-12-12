@@ -1,22 +1,24 @@
-.header {
-	// @include gridContainer(3)
-	@media (min-width:$tablet){
-		  
-		max-width: 61.458333%; /* 1180/1920 */
-	}
-}
+
 
 .header {
-	outline: 1px solid red;
+	// outline: 1px solid red;
 	width: 100%;
-	position: fixed;
+	// position: fixed;
+	position: sticky;
+	top: 0;
+	z-index: 2;
 	line-height: 150%;
 	text-transform: uppercase;
 	padding-block: 50px;
-	background-color: #222;
+	background-color: transparent;
+	transition: background-color 0.8s;
+	background-color: #282829;
+	&._header-scroll {
+		background-color: #222;
+	}
 	@media (min-width:$tablet){
 		  
-		@include adaptiveValue("margin-left", 185, 30,0,1920,992);
+		@include adaptiveValue("padding-left", 185, 0,0,1920,992);
 	}
 	&__container {
 		display: flex;
@@ -60,6 +62,24 @@
 		font-size: 16px;
 		line-height: 150%;
 		letter-spacing: 0.04em;
+		position: relative;
+		transition: color 0.3s;
+		&::after{
+			content:'';
+			position: absolute;
+			top: 110%;
+			left: 0;
+			width: 0%;
+			height: 2px;
+			background-color: red;
+			transition: width 0.3s;
+		}
+		&:hover{
+			color: #d3c2c2;
+			&::after {
+				width: 100%;
+			}
+		}
 	}
 }
 

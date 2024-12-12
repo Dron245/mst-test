@@ -1,15 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	@@include('html/_head.htm',{
-	"title":"HomePage"
-	})
+	@@include('html/_head.htm',{ "title":"HomePage" })
 	<body>
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
 			<main class="page">
 				<section class="page__main main">
 					<div class="main__container">
-						<h1 class="main__title title">The best post-apocalypse computer games</h1>	
+						<div class="main__content">
+							<h1 class="main__title">The best post-apocalypse computer games</h1>
+							<p class="main__subtitle">These games are always with you</p>
+							<ul class="main__list">
+								<li class="main__item">
+									<p>The cost of the game does not exceed 
+									<span>$ 100</span></p>
+								</li>
+								<li class="main__item">
+									<p>Discounts up to <span>30 %</span></p></li>
+								<li class="main__item">
+									<p>More than
+									 <span>20 %</span> of users have already bought</p>
+								</li>
+							</ul>
+							<a href="#" class="main__link button">Order</a>
+						</div>
+						<div class="main__img">
+							<img src="@img/1.jpg" alt="Image" />
+						</div>
+					</div>
+				</section>
+				<section  class="page__description description">
+					<div class="description__container">
+						<div class="description__img">
+							<img src="@img/1.jpg" alt="Image" />
+						</div>
+						<div class="description__content">
+							<ul class="description__list">
+								<li class="description__item">
+									<p>There are many games that offer thrilling experiences.
+								</p>
+									</li>
+								<li class="description__item">
+									<p>Some popular examples include games like Fallout, The Last of Us, and
+									Dying Light.</p>
+									
+								</li>
+								<li class="description__item">
+									<p>These games offer offer a mix of action, exploration, and role-playing
+									elements, and can be very immersive and engaging.
+								</p>
+									</li>
+								<li class="description__item">
+									<p>These games develop reaction and speed of thinking in non-standard
+									situations</p>
+									
+								</li>
+							</ul>
+							<a href="#" class="description__link button">Order</a>
+						</div>
+						<div class="description__img">
+							<img src="@img/2.jpg" alt="Image" />
+						</div>
+					</div>
+				</section>
+				<section class="page__request request">
+					<div class="request__container">
+						<div class="request__content">
+							<form action="#" class="request__form">
+								<h3 class="request__title">Send a request and get the game</h3>
+								<!-- <div class="form__item"> -->
+								<input
+									autocomplete="off"
+									type="text"
+									name="form[]"
+									data-error="Ошибка"
+									placeholder="Your name"
+									class="input"
+								/>
+								<input
+									autocomplete="off"
+									type="email"
+									name="form[]"
+									data-error="Ошибка"
+									placeholder="Your email address"
+									class="input"
+								/>
+								<!-- </div> -->
+								<div class="checkbox">
+									<input
+										id="c_1"
+										data-error="Ошибка"
+										class="checkbox__input"
+										type="checkbox"
+										value="1"
+										name="form[]"
+									/>
+									<label for="c_1" class="checkbox__label"
+										><span class="checkbox__text">I accept Privacy policy</span></label
+									>
+								</div>
+								<button type="submit" class="request__button button button_invert">Submit Form</button>
+							</form>
+							<div class="request__img">
+								<img src="@img/4.jpg" alt="Image" />
+							</div>
+						</div>
 					</div>
 				</section>
 			</main>

@@ -9,12 +9,23 @@ textarea {
 	appearance: none;
 }
 .input {
-	border-radius: 0 !important;
 	width: 100%;
 	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
+	border: 2px solid #d5c9be;
+border-radius: 4px;
+padding: 25px 40px;
+font-size: 24px;
+line-height: 150%;
+@media (max-width:$mobile){
+	 padding-block: 15px;
+	 padding-inline: 20px; 
+	 font-size: 18px;
+}
+color: rgba(84, 85, 89, 0.7);
 	caret-color: inherit;
+	&::placeholder {
+		color: rgba(84, 85, 89, 0.7);
+	}
 	&._form-focus {
 	}
 	&._form-error {

@@ -1,3 +1,291 @@
 //====================================================================================================
+.page {
+	transition: background-color 0.8s;
+	._header-scroll+& {
+		background-color: #222;
+	}
+
+	&__main {
+		transition: background-color 0.5s;
+	}
+
+	&__description {
+		transition: background-color 0.5s;
+	}
+
+	&__request {
+		transition: background-color 0.5s;
+	}
+}
+
+.main {
+	._header-scroll+ .page & {
+		background-color: #222;
+	}
+	&__container {
+		display: flex;
+
+		@media (max-width:$tablet) {
+			flex-direction: column;
+		}
+
+		// align-items: center;
+	}
+
+	&__content {
+		flex: 1;
+		@include adaptiveValue("margin-left", 185, 0, 0, 1920, 992);
+		@include adaptiveValue("margin-top", 300, 100, 0, 1920, 992);
+
+		@media (max-width:$mobile) {
+			margin-top: 00px;
+		}
+	}
+
+	&__title {
+		line-height: 120%;
+		font-family: prata;
+		text-wrap: balance;
+		@include adaptiveValue("font-size", 80, 40, 0, 1920, 768);
+		@include adaptiveValue("margin-bottom", 50, 20, 0, 1920, 768);
+	}
+
+	&__subtitle {
+		@include adaptiveValue("font-size", 50, 25, 0, 1920, 768);
+		@include adaptiveValue("margin-bottom", 60, 20, 0, 1920, 768);
+	}
+
+	&__list {
+		display: grid;
+		@include adaptiveValue("row-gap", 37, 15, 0, 1920, 992);
+
+		&:not(:last-child) {
+			margin-bottom: toRem(40);
+		}
+
+		padding-left: 40px;
+	}
+
+	&__item {
+		position: relative;
+		line-height: 110%;
+		list-style-image: url('@img/check.svg');
+		@include adaptiveValue("font-size", 24, 16, 0, 1920, 768);
+
+		p {
+			position: relative;
+			top: -20%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 5px;
+		}
+
+		span {
+			font-family: prata;
+			position: relative;
+			top: 20%;
+			@include adaptiveValue("font-size", 40, 20, 0, 1920, 768);
+		}
+
+	}
+
+	&__link {
+		width: 200px;
+		@include adaptiveValue("padding-block", 32, 10, 0, 1920, 768);
+	}
+
+	&__img {
+		flex: 0 0 39.739583%;
+
+		/* 763/1920 */
+		@media (max-width:$tablet) {
+			margin-top: 50px;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.button {
+
+	&_invert {}
+}
+
+.description {
+	
+	._header-scroll + .page & {
+		background-color: #222;
+	}
+	margin-top: 6.25rem;
+
+	@media (max-width:$mobile) {
+		margin-top: 3.125rem;
+	}
+
+	&__container {
+		display: flex;
+		gap: 3.125rem;
+
+		@media (max-width:$tablet) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__img {
+		flex: 0 1 33.333%;
+
+		@media (max-width:$tablet) {
+			flex: 0 1 100%;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__content {
+		@media (min-width:$tablet) {
+
+			flex: 0 1 33.333%;
+		}
+	}
+
+	&__list {}
+
+	&__item {
+		padding-left: 78px;
+		position: relative;
+		@include adaptiveValue("padding-block", 40, 15, 0, 1920, 992);
+		@media (max-width:$tablet){
+			padding-left: 40px;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+
+			width: 58px;
+			aspect-ratio: 58/47;
+			@media (max-width:$tablet){
+				width: 30px;
+			}
+			background: url('@img/punkt.png') 0 0 / cover no-repeat;
+			@include adaptiveValue("top", 40, 15, 0, 1920, 992);
+		}
+
+		&:not(:last-child) {
+			border-bottom: 1px solid #55565a;
+		}
+
+		p {
+			line-height: 140%;
+			@include adaptiveValue("font-size", 24, 16, 0, 1920, 992);
+		}
+	}
+
+	&__link {
+
+		width: 100%;
+		@include adaptiveValue("margin-top", 40, 10, 0, 1920, 992);
+		@include adaptiveValue("padding-block", 20, 10, 0, 1920, 992);
+	}
+}
+
+.request {
+	._header-scroll + .page & {
+		background-color: #222;
+	}
+	@include adaptiveValue("margin-top", 100, 40, 0, 1920, 992);
+
+	&__container {}
+
+	&__content {
+		display: flex;
+		overflow: hidden;
+		border: 0.125rem solid #d5c9be;
+		border-radius: 1.875rem;
+		width: 83.333333%;
+		background-color: #fff;
+		/* 1600/1920 */
+		margin-inline: auto;
+		@media (max-width:$mobile){
+			 flex-direction: column; 
+		}
+		@include adaptiveValue("gap", 40, 10,1920,992);
+	}
+
+	&__form {
+		padding-block: 4.375rem;
+		@media (min-width:$mobile){
+			flex: 0 0 59%; /* 780/1600 */
+		}
+		@media (max-width:$mobile){
+			padding-block: 1.65rem;
+			 padding-inline: 15px; 
+		}
+		@media (min-width:$mobile){
+			  
+			@include adaptiveValue("padding-left", 174, 40,0,1920,992);
+		}
+		
+	}
+
+	&__title {
+		line-height: 110%;
+		color: #38535d;
+		font-family: prata;
+		margin-bottom: toRem(45);
+		@media (max-width:$tablet){
+			margin-bottom: 1.25rem;
+		}
+		@include adaptiveValue("font-size", 54, 24,0,1920,992);
+	}
+
+	&__button {
+		width: 100%;
+		@media (max-width:$mobile){
+			 font-size: 18px;
+			 padding: 15px toRem(0); 
+		}
+	}
+	&__img {
+		@media (min-width:$mobile){
+			flex: 0 0 38.7%;
+			  
+		}
+		position: relative;
+		img {
+			@media (min-width:$mobile){
+				  position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			}
+			@media (max-width:$mobile){
+				 width: 100%; 
+			}
+		}
+	}
+}
+
+.input {
+	&:not(:last-child) {margin-bottom: toRem(13);}
+}
+
+.checkbox {
+	margin-block: 1.625rem;
+	&__input {}
+
+	&__label {}
+
+	&__text {}
+}
 
 //====================================================================================================

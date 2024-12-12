@@ -1,3 +1,133 @@
 //====================================================================================================
+.footer {
+	background-color: #222;
+	padding-block: 6.25rem;
+
+	@media (max-width:$mobile) {
+		padding-top: 3.125rem;
+	}
+
+	&__container {}
+
+	&__menu {
+		padding-block: 2.5rem;
+		border-top: 2px solid #d5c9be;
+		border-bottom: 2px solid #d5c9be;
+		margin-inline: -15px;
+		padding-inline: 15px;
+	}
+
+	&__action {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width:$mobile){
+			 flex-direction: column;
+			 row-gap: 1.875rem; 
+		}
+		@include adaptiveValue("margin-block", 53, 20, 0, 1920, 768);
+	}
+
+	&__list {
+		.footer & {
+			display: flex;
+			justify-content: center;
+			@include adaptiveValue("gap", 32, 16, 0, 1920, 768);
+		}
+	}
+
+	&__item {}
+
+	&__link {
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	&__bottom-link {
+		font-size: 1.25rem;
+		line-height: 150%;
+		color: #d5c9be;
+		position: relative;
+		transition: color 0.3s;
+		@media (max-width:$mobile){
+			font-size: 1.875rem;  
+		}
+		&::after{
+			content:'';
+			position: absolute;
+			top: 110%;
+			left: 0;
+			width: 0%;
+			height: 0.125rem;
+			background-color: red;
+			transition: width 0.3s;
+		}
+		&:hover{
+			color: #d3c2c2;
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width:$mobile){
+			 flex-direction: column;
+			 gap: 1.875rem;
+			
+		}
+	}
+
+	&__text {}
+}
+
+.menu {
+
+	&__body {}
+
+	&__list {
+		.footer & {
+			display: flex;
+			justify-content: center;
+			@media (max-width:$mobile){
+				 flex-direction: column; 
+			}
+			@include adaptiveValue("gap", 60, 30, 0, 1920, 768);
+		}
+	}
+
+	&__item {}
+
+	&__link {
+		.footer & {
+			text-transform: uppercase;
+			@media (max-width:$mobile){
+				 font-size: 1.875rem; 
+			}
+		}
+	}
+}
+
+.header {
+
+	&__logo {
+		.footer & {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.main {
+
+	&__link {}
+}
+
+.button {}
 
 //====================================================================================================
